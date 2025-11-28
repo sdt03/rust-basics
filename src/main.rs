@@ -1,9 +1,11 @@
 use crate::structs::Rectangle;
 use crate::methods::Square;
+use crate::patterns::Shape;
 mod references;
 mod borrowers;
 mod structs;
 mod methods;
+mod patterns;
 fn main() {
     let a: u32 = 1;
     let b: u32 = 9;
@@ -20,6 +22,11 @@ fn main() {
         side: 4
     };
     println!("Area of square is {}", square1.area());
+    let circle = Shape::Circle(3.0);
+    let square = Shape::Square(10.0);
+    println!("{}, {}", crate::patterns::calculate_area(circle), crate::patterns::calculate_area(square));
+    let circle = Shape::Circle(3.14);
+    println!("{}", crate::patterns::calculate_perimeter(circle));
 
 }
 
